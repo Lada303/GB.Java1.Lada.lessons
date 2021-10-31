@@ -26,12 +26,14 @@ public class HomeWorkApp {
         int[] arr3 = {1,1,2,0,4};
         System.out.println(Lesson3.isEqualityOfTwoPartsArray(arr3));
         //8
-        int[] arr4 = {1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions1(arr4,-5)));
-        int[] arr5 = {1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions2(arr5,-5)));
-        int[] arr6 = {1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions3(arr6,-5)));
+        int[] arr4 = {1,2,3,4,5,6,7,8};
+        System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions1(arr4,2)));
+        int[] arr5 = {1,2,3,4,5,6,7,8};
+        System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions2(arr5,6)));
+        for (int i=1; i<=15; i++) {
+            int[] arr7 = {1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15};
+            System.out.println(Arrays.toString(Lesson3.shiftElementsArrayByNPositions3(arr7, i)));
+        }
 
     }
 

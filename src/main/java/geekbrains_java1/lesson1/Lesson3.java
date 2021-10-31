@@ -62,7 +62,7 @@ public class Lesson3 {
     public static int maxElementArray (int[] arr) {
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            max = (arr[i]>max ? arr[i] : max);
+            max = Math.max(arr[i], max);
         }
         return max;
     }
@@ -100,7 +100,7 @@ public class Lesson3 {
 
 //8** вар1 - доп массив и System.arraycopy()
     public static int[] shiftElementsArrayByNPositions1(int[] arr, int n) {
-        if (arr.length<=1 || n==0) return arr;
+        if (arr.length<=1 || n%arr.length==0) return arr;
 
         n = (Math.abs(n)>arr.length ? n%arr.length : n);
         n = (n<0 ? n+arr.length : n);
@@ -114,7 +114,7 @@ public class Lesson3 {
 
 //8** вар2 без создания доп массива - n раз сдвиг на 1 позицию всего массива
     public static int[] shiftElementsArrayByNPositions2(int[] arr, int n) {
-        if (arr.length<=1 || n==0) return arr;
+        if (arr.length<=1 || n%arr.length==0) return arr;
 
         n = (Math.abs(n)>arr.length ? n%arr.length : n);
         n = (n<0 ? n+arr.length : n);
@@ -130,20 +130,27 @@ public class Lesson3 {
 
 //8** вар3 без System.arraycopy()-поэлементное перемещение сразу на нужное место внутри массива
     public static int[] shiftElementsArrayByNPositions3(int[] arr, int n) {
-        if (arr.length<=1 || n==0) return arr;
+        if (arr.length<=1 || n%arr.length==0) return arr;
 
         n = (Math.abs(n)>arr.length ? n%arr.length : n);
         n = (n<0 ? n+arr.length : n);
 
-        int corr_ind = n-1;
-        int next_ind;
-        int buffer=arr[corr_ind];
-        for (int i=1; i<=arr.length-1; i++) {
-            next_ind=(corr_ind-n>=0 ? corr_ind-n : arr.length+(corr_ind-n));
-            arr[corr_ind] = arr[next_ind];
-            corr_ind=next_ind;
+        int start_ind = n-1, corr_ind, next_ind, buffer;
+        int counter=0;
+        while (counter!=arr.length) {
+            corr_ind=start_ind;
+            buffer=arr[corr_ind];
+            for (int i = 1; i <= arr.length; i++) {
+                next_ind = (corr_ind - n >= 0 ? corr_ind - n : arr.length + (corr_ind - n));
+                if (next_ind == start_ind) break;
+                arr[corr_ind] = arr[next_ind];
+                counter++;
+                corr_ind = next_ind;
+            }
+            arr[corr_ind] = buffer;
+            counter++;
+            start_ind--;
         }
-        arr[corr_ind]=buffer;
         return arr;
     }
 
