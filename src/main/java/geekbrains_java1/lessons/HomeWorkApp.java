@@ -1,6 +1,4 @@
-package geekbrains_java1.lesson1;
-
-import java.util.Arrays;
+package geekbrains_java1.lessons;
 
 
 public class HomeWorkApp {

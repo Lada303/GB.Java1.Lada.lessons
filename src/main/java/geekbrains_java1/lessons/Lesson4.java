@@ -1,4 +1,4 @@
-package geekbrains_java1.lesson1;
+package geekbrains_java1.lessons;
 
 import java.util.InputMismatchException;
 import java.util.Locale;

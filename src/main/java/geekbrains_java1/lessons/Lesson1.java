@@ -1,6 +1,6 @@
-package geekbrains_java1.lesson1;
+package geekbrains_java1.lessons;
 
-public class lesson1 {
+public class Lesson1 {
 
     public static void printThreeWords(){
         System.out.println("Orange\n" + "Banana\n" + "Apple");

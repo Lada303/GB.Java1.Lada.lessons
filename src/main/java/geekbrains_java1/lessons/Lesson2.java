@@ -1,6 +1,6 @@
-package geekbrains_java1.lesson1;
+package geekbrains_java1.lessons;
 
-public class lesson2 {
+public class Lesson2 {
 
     public static boolean sumFrom10To20 (int a, int b){
         return a+b>=10 && a+b<=20;
